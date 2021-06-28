@@ -8,7 +8,6 @@ export const Item = styled.div`
     overflow: hidden;
 `;
 
-
 export const Inner = styled.div`
     display:flex;
     align-items: center;
@@ -61,4 +60,10 @@ export const Image = styled.img`
 
 `;
 
-export const Container = styled.div``;
+export const Container = styled.div`
+    @media (max-width: 1000px) {
+        ${Item}: last-of-type h2 {
+            margin-bottom: 50px;
+        }
+    }
+`;
