@@ -12,6 +12,9 @@ export function FaqsContainer() {
           <Accordion.Body>{item.body}</Accordion.Body>
         </Accordion.Item>
       ))}
+      <OptForm>
+        <OptForm.Input></OptForm.Input>
+      </OptForm>
     </Accordion>
   );
 }
