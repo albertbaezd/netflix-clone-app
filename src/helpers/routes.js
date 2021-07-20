@@ -12,7 +12,7 @@ export function IsUserRedirect({ user, loggedInPath, children, ...rest }) {
         }
 
         if (user) {
-          <Redirect to={{ pathname: loggedInPath }} />;
+          return <Redirect to="/browse" />;
         }
 
         return null;
