@@ -16,7 +16,14 @@ export function SelectProfileContainer({ user, setProfile }) {
       <Profiles>
         <Profiles.Title>Who&apos;s watching?</Profiles.Title>
         <Profiles.List>
-          <Profiles.User>
+          <Profiles.User
+            onClick={() =>
+              setProfile({
+                displayName: user.displayName,
+                photoURL: user.photoURL,
+              })
+            }
+          >
             {console.log("current user is", user)}
             {/* <Profiles.Picture src={user.photoURL}></Profiles.Picture> */}
             <Profiles.Picture src={"1"}></Profiles.Picture>
