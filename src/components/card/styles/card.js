@@ -29,10 +29,10 @@ export const Group = styled.div`
   flex-direction: ${({ flexDirection }) =>
     flexDirection === "row" ? "row" : "column"};
 
-  ${({ alignItems }) => alignItems && `align-items: ${alignItems}`}
-  ${({ margin }) => margin && `margin: ${margin}`}
+  ${({ alignItems }) => alignItems && `align-items: ${alignItems}`};
+  ${({ margin }) => margin && `margin: ${margin}`};
 
-  >${Container}:first-of-type {
+  > ${Container}:first-of-type {
     @media (min-width: 1100px) {
       margin-top: -150px;
     }
@@ -60,7 +60,15 @@ export const Text = styled.p`
 `;
 
 export const FeatureText = styled.p`
-  margin-left: 0;
+  font-size: 18px;
+  color: white;
+  font-weight: ${({ fontWeight }) =>
+    fontWeight === "bold" ? "bold" : "normal"};
+  margin: 0;
+
+  @media (max-width: 600px) {
+    line-height: 22px;
+  }
 `;
 export const Feature = styled.div`
   display: flex;
@@ -137,7 +145,7 @@ export const Meta = styled.div`
   position: absolute;
   bottom: 0;
   padding: 10px;
-  background-color: #000000;
+  background-color: #0000008f;
 `;
 
 export const Entities = styled.div`
@@ -153,7 +161,7 @@ export const Item = styled.div`
   cursor: pointer;
   transition: transform 0.2s;
 
-  &hover {
+  &:hover {
     transform: scale(1.3);
     z-index: 99;
   }
