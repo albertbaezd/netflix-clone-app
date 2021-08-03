@@ -1,6 +1,8 @@
 import styled from "styled-components/macro";
 
-export const Container = styled.div`
+export const Container = styled.div``;
+
+export const Overlay = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,8 +14,6 @@ export const Container = styled.div`
   background: rgba(0, 0, 0, 0.5);
   margin: 0 20px;
 `;
-
-export const Overlay = styled.div``;
 
 export const Inner = styled.div`
   position: relative;
@@ -64,7 +64,7 @@ export const Close = styled.button`
 export const Button = styled.button`
   background-color: #e50914;
   border-color: #ff0a10;
-  width: 114px;
+  width: 115px;
   text-transform: uppercase;
   font-weight: bold;
   color: white;
