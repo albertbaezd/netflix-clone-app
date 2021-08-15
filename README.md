@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Project description
+
+This is a sample project created to mimic Netflix's basic functionalities. Created with ♥ using React JS, Styled Components, and Firebase.\
+⚡You can check out the working version hosted at Netlify over [here](https://albertbaezd-netflix-clone.netlify.app/).⚡
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
