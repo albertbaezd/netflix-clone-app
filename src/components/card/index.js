@@ -18,6 +18,8 @@ import {
   Image,
 } from "./styles/card";
 
+import { GenreContext } from "../../containers/browse";
+
 export const FeatureContext = createContext();
 
 export default function Card({ children, ...restProps }) {
@@ -53,11 +55,17 @@ Card.Meta = function CardMeta({ children, ...restProps }) {
   return <Meta {...restProps}>{children}</Meta>;
 };
 
-Card.Feature = function CardFeature({ children, category, ...restProps }) {
+Card.Feature = function CardFeature({
+  children,
+  category,
+  genre,
+  ...restProps
+}) {
   const { showFeature, itemFeature, setShowFeature } =
     useContext(FeatureContext);
+  const { activeGenre } = useContext(GenreContext);
 
-  return showFeature ? (
+  return showFeature && genre == activeGenre ? (
     <>
       <Feature
         {...restProps}
@@ -90,14 +98,16 @@ Card.Feature = function CardFeature({ children, category, ...restProps }) {
 Card.Entities = function CardEntities({ children, ...restProps }) {
   return <Entities {...restProps}>{children}</Entities>;
 };
-Card.Item = function CardItem({ item, children, ...restProps }) {
+Card.Item = function CardItem({ item, children, genre, ...restProps }) {
   const { setShowFeature, setItemFeature } = useContext(FeatureContext);
+  const { activeGenre, setActiveGenre } = useContext(GenreContext);
 
   return (
     <Item
       onClick={() => {
         setItemFeature(item);
         setShowFeature(true);
+        setActiveGenre(genre);
       }}
       {...restProps}
     >
